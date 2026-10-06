@@ -1,0 +1,12 @@
+const express = require('express');
+const router = express.Router();
+const ctrl = require('../controllers/magiamgiaController');
+const { requireAdmin } = require('../common/adminSession');
+router.get('/', ctrl.getAll);
+router.get('/available', ctrl.getAvailable);
+router.post('/validate', ctrl.validate);
+router.get('/:id', ctrl.getById);
+router.post('/', requireAdmin, ctrl.create);
+router.put('/:id', requireAdmin, ctrl.update);
+router.delete('/:id', requireAdmin, ctrl.delete);
+module.exports = router;

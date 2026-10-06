@@ -1,0 +1,4 @@
+USE AppBanBongChuyen;
+
+ALTER TABLE SanPham
+MODIFY COLUMN AnhDaiDien LONGTEXT NULL;

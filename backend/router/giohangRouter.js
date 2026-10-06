@@ -1,0 +1,15 @@
+const express = require('express');
+const router = express.Router();
+const ctrl = require('../controllers/giohangController');
+router.get('/user/:userId', ctrl.getByUserId);
+router.post('/user/:userId/items', ctrl.addItemForUser);
+router.put('/user/:userId/items/:productId/variants/:variantId', ctrl.updateItemForUser);
+router.delete('/user/:userId/items/:productId/variants/:variantId', ctrl.deleteItemForUser);
+router.put('/user/:userId/items/:productId', ctrl.updateItemForUser);
+router.delete('/user/:userId/items/:productId', ctrl.deleteItemForUser);
+router.get('/', ctrl.getAll);
+router.get('/:id', ctrl.getById);
+router.post('/', ctrl.create);
+router.put('/:id', ctrl.update);
+router.delete('/:id', ctrl.delete);
+module.exports = router;

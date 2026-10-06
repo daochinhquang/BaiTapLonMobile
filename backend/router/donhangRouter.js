@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const ctrl = require('../controllers/donhangController');
+router.post('/checkout', ctrl.checkout);
+router.get('/user/:userId', ctrl.getByUserId);
+router.get('/user/:userId/:orderId', ctrl.getDetailForUser);
+router.put('/user/:userId/:orderId/cancel', ctrl.cancelForUser);
+router.get('/', ctrl.getAll);
+router.get('/:id', ctrl.getById);
+router.post('/', ctrl.create);
+router.put('/:id', ctrl.update);
+router.delete('/:id', ctrl.delete);
+module.exports = router;

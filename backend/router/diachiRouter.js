@@ -1,0 +1,14 @@
+const express = require('express');
+const router = express.Router();
+const ctrl = require('../controllers/diachiController');
+router.get('/user/:userId', ctrl.getByUserId);
+router.post('/user/:userId', ctrl.createForUser);
+router.put('/user/:userId/:addressId/default', ctrl.setDefaultForUser);
+router.put('/user/:userId/:addressId', ctrl.updateForUser);
+router.delete('/user/:userId/:addressId', ctrl.deleteForUser);
+router.get('/', ctrl.getAll);
+router.get('/:id', ctrl.getById);
+router.post('/', ctrl.create);
+router.put('/:id', ctrl.update);
+router.delete('/:id', ctrl.delete);
+module.exports = router;
